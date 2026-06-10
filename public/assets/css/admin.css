@@ -1,0 +1,144 @@
+body.admin-body {
+    min-height: 100vh;
+    background: #eef3f7;
+    color: #17212b;
+}
+
+.admin-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+}
+
+.admin-sidebar {
+    background: linear-gradient(180deg, #30485f 0%, #425c76 100%);
+    color: #fff;
+    padding: 24px 18px;
+}
+
+.admin-brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 26px;
+}
+
+.admin-brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: #e0b340;
+    color: #1f2d3a;
+    font-size: 22px;
+}
+
+.admin-brand-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.admin-brand-subtitle {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.78rem;
+}
+
+.admin-nav {
+    display: grid;
+    gap: 8px;
+}
+
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    color: rgba(255, 255, 255, 0.78);
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.admin-nav-link:hover,
+.admin-nav-link.active {
+    background: rgba(19, 34, 50, 0.56);
+    color: #fff;
+}
+
+.admin-main {
+    min-width: 0;
+    padding: 0 32px 32px;
+}
+
+.admin-topbar {
+    height: 76px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid rgba(23, 33, 43, 0.08);
+    margin-bottom: 28px;
+}
+
+.admin-content {
+    max-width: 1180px;
+}
+
+.module-card {
+    background: #fff;
+    border: 1px solid rgba(23, 33, 43, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 16px 35px rgba(31, 45, 58, 0.08);
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid rgba(23, 33, 43, 0.08);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.stat-card i {
+    width: 40px;
+    height: 40px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 8px;
+    background: #e7f1ff;
+    color: #0d6efd;
+}
+
+.table-thumb {
+    width: 54px;
+    height: 44px;
+    border-radius: 7px;
+    object-fit: cover;
+    background: #e9eef3;
+}
+
+.image-upload-box {
+    min-height: 128px;
+    border: 1px dashed #b9c7d5;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    color: #607182;
+    background: #f8fbfd;
+}
+
+@media (max-width: 900px) {
+    .admin-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        position: static;
+    }
+
+    .admin-main {
+        padding: 0 18px 24px;
+    }
+}
