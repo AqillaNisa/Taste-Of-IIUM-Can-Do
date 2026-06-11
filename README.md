@@ -18,7 +18,7 @@
 ## Project Overview (THILAH)
 
 Introduction :
-QuickPlate is a web-based food ordering system developed using Laravel framework. The application connects customers with local restaurants, allowing users to browse menus, place orders, and track deliveries in real-time. Restaurant owners can manage their menus, process orders, and update order status through an intuitive dashboard.
+Taste-of-IIUM is a web-based application development to help users easily find food and beverage that available in different Mahallah cafe in IIUM campus. It also included an integrated map feature that show exact location of each Mahallah cafe to help users easily reach to the cafe without confusion, especially for new studnts or visitors.
 
 ## Project Objectives (HANNA)
 
