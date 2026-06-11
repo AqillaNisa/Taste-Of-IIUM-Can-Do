@@ -38,22 +38,20 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 
 **Customer Features**
 
-- User Registration & Login: Secure account creation and authentication
-- Restaurant Browsing: View available restaurants and their menus
-- Menu Exploration: Browse food items with descriptions, prices, and images
-- Shopping Cart: Add/remove items, modify quantities, view total cost
-- Order Placement: Secure checkout process with order confirmation
-- Order Tracking: Real-time status updates on order progress
-- Order History: View previous orders and reorder functionality
-- Profile Management: Update personal information and delivery addresses
+- Navigation Bar: Navigate users to different sections of the website smoothly
+- Mahallah Map: Displays Mahallah location to guide newcomers around IIUM
+- Contact Section: Submit suggestions through email and stall operators can contact admin about their stall
+- Browse Mahallah : View lists of Mahallah in IIUM
+- View Stalls: View stalls available in the Mahallah, include stall name, image of their food and operating hours
+- Search bar for food stalls: Enter keywords to find specific food stall
+- View stall menu: Click "See More Details" to display the food names and prices
+  
 
 **Admin Features** 
 
-- Restaurant Dashboard: Overview of orders, sales, and performance
-- Menu Management: Add, edit, delete menu items with images
-- Order Management: View incoming orders and update order status
-- Profile Management: Update restaurant information and operating hours
-- Sales Analytics: Basic reporting on sales and popular items
+- Admin Dashboard: Displays the number of stalls, food item and admin registered and the recent stalls updated.
+- Stalls Management: Add, edit, delete stall with images
+- Food Items Management: Add, edit, delete food item
 
 ## Technical Implementation 
 
@@ -261,7 +259,6 @@ class Order extends Model {
 
 - Page load times under 3 seconds
 - Database queries optimized
-- Image compression implemented
 - Responsive design tested on multiple screen sizes
 
 
