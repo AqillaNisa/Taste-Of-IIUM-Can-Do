@@ -55,7 +55,7 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 - Profile Management: Update restaurant information and operating hours
 - Sales Analytics: Basic reporting on sales and popular items
 
-## Technical Implementation (NISA)
+## Technical Implementation 
 
 ** Technology Stack**
 
@@ -197,7 +197,7 @@ class Order extends Model {
 - Middleware protection for authenticated routes
 
 
-## Installation and Setup Instructions  (NISA)
+## Installation and Setup Instructions 
 ### Prerequisites :
 - PHP >= 8.1
 - Composer
@@ -215,23 +215,26 @@ cd QuickPlate
 
 2. Install Dependencies
 
-bashcomposer install
+bash
+composer install
 npm install
 
 3. Environment Configuration
 
-bashcp .env.example .env
+bash
+cp .env.example .env
 php artisan key:generate
 
 4. Database Setup
 
-bash# Configure database in .env file
+bash
 php artisan migrate
 php artisan db:seed
 
 5. Start Development Server
 
-bashphp artisan serve
+bash
+php artisan serve
 npm run dev
 
 ## Testing and Quality Assurance
