@@ -18,7 +18,7 @@
 ## Project Overview (THILAH)
 
 Introduction :
-Taste-of-IIUM is a web-based application development to help users easily find food and beverage that available in different Mahallah cafe in IIUM campus. It also included an integrated map feature that show exact location of each Mahallah cafe to help users easily reach to the cafe without confusion, especially for new studnts or visitors.
+Taste-of-IIUM is a web-based application development to help users easily find food and beverages that are available in different Mahallah cafes in IIUM campus. It also included an integrated map feature that showed the exact location of each Mahallah cafe to help users easily reach the cafe without confusion, especially for new students or visitors.
 
 ## Project Objectives (HANNA)
 
