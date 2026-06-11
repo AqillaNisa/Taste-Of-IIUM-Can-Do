@@ -44,7 +44,7 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 - Browse Mahallah : View list of Mahallah in IIUM
 - View Stall: View stall available in the Mahallah, include stall name, image of their food and operating hours
 - Search bar for food stall: To find specific food stall easily
-- View stall menu: Click "See More Details" to display the food names and prices
+- View stall menu: The "See More Details" button display the stalls menu
   
 
 **Admin Features** 
