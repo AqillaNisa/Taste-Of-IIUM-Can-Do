@@ -36,7 +36,7 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 
 ## Features and Functionalities (SITI)
 
-** Customer Features**
+**Customer Features**
 
 - User Registration & Login: Secure account creation and authentication
 - Restaurant Browsing: View available restaurants and their menus
@@ -57,7 +57,7 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 
 ## Technical Implementation 
 
-** Technology Stack**
+**Technology Stack**
 
 - Backend Framework: Laravel 10.x
 - Frontend: Blade Templates with Bootstrap 5
@@ -66,7 +66,7 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 - Image Storage: Laravel File Storage
 - Development Environment: XAMPP
 
-** Database Design**
+**Database Design**
 
 Database Schema Overview
 This database consists of 11 main tables used to interact between customers, 
@@ -183,7 +183,7 @@ class Order extends Model {
 
 ## User Authentication System
 
-### ** Authentication Features**
+### **Authentication Features**
 - **Registration System**: Email validation, password confirmation, role selection
 - **Login System**: Secure authentication with "Remember Me" option
 - **Password Reset**: Email-based password recovery system
@@ -270,11 +270,11 @@ class Order extends Model {
 - Problem: Each Mahallah Cafe offers different food and beverage options
 - Solution: Design a structured relational database to organize and display the information efficiently
 ### Challenge 2: Integrating Location Information
-- Problem: Users, especially new students and visitors may not know the exact location of a particular Mahallah Cafe.
-- Solution: Added map images and location reference for each Mahallah Cafe to help users navigate easily.
+- Problem: New students and visitors are not aware of the location of Mahallah Cafes and the types of food available at each Mahallah.
+- Solution: Provide a map image for Mahallah locations to help users find the location and list of food menus offered.
 ### Challenge 3: Maintaining Accurate and Consistent Menu Data
 - Problem: Food and Beverage information must remain consistent across all pages and updates.
-- Solution: Centralized menu management through the database, allowing administrators to update  information from a single source.
+- Solution: Centralized menu management through the database, administrators can easily update menu information in one database.
 
 ## Future Enhancements
 ### Phase 2 Features (Potential Improvements)
