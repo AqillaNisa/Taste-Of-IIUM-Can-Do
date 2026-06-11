@@ -1,6 +1,6 @@
-# QuickPlate
+# Taste of IIUM
 
-# QuickPlate - Food Menu 
+# Taste of IIUM - Food Menu
 
 ## Group Information
 
@@ -41,9 +41,9 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 - Navigation Bar: Navigate users to different sections of the website smoothly
 - Mahallah Map: Displays Mahallah location to guide newcomers around IIUM
 - Contact Section: Submit suggestions through email and stall operators can contact admin about their stall
-- Browse Mahallah : View lists of Mahallah in IIUM
-- View Stalls: View stalls available in the Mahallah, include stall name, image of their food and operating hours
-- Search bar for food stalls: Enter keywords to find specific food stall
+- Browse Mahallah : View list of Mahallah in IIUM
+- View Stall: View stall available in the Mahallah, include stall name, image of their food and operating hours
+- Search bar for food stall: To find specific food stall easily
 - View stall menu: Click "See More Details" to display the food names and prices
   
 
@@ -239,13 +239,11 @@ class Order extends Model {
 
 ###  Functionality Testing
 
- - User registration and login system
- - Restaurant browsing and menu display
- - Shopping cart add/remove functionality
- - Order placement and confirmation
- - Order status tracking
- - Restaurant owner menu management
- - Admin user management
+ - Navigation and routing
+ - Mahallah and stall browsing
+ - Stall menu display
+ - Admin stall and food item management(CRUD)
+ - Admin user and authentication management
  - Responsive design across devices
 
 ### Browser Compatibility
