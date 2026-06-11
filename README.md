@@ -263,15 +263,15 @@ npm run dev
 
 
 ## Challenges Faced and Solutions
-### Challenge 1: Complex Order Management
-- Problem: Managing relationships between orders, order items, and menu items
-- Solution: Implemented proper Eloquent relationships and created pivot tables for many-to-many relationships
-### Challenge 2: Real-time Order Tracking
-- Problem: Updating order status in real-time without page refresh
-- Solution: Used AJAX calls to update order status dynamically
-### Challenge 3: Role-based Authentication
-- Problem: Different user types requiring different access levels
-- Solution: Implemented middleware to check user roles and redirect appropriately
+### Challenge 1: Managing Food Information Across Multiple Mahallah Cafes
+- Problem: Each Mahallah Cafe offers different food and beverage options
+- Solution: Design a structured relational database to organize and display the information efficiently
+### Challenge 2: Integrating Location Information
+- Problem: Users, especially new students and visitors may not know the exact location of a particular Mahallah Cafe.
+- Solution: Added map images and location reference for each Mahallah Cafe to help users navigate easily.
+### Challenge 3: Maintaining Accurate and Consistent Menu Data
+- Problem: Food and Beverage information must remain consistent across all pages and updates.
+- Solution: Centralized menu management through the database, allowing administrators to update  information from a single source.
 
 ## Future Enhancements
 ### Phase 2 Features (Potential Improvements)
