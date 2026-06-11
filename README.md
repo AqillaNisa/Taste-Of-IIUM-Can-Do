@@ -79,7 +79,7 @@ Core Tables:
 
 ### Entity Relationship Diagram (ERD) (HANNA)
 
-https://docs.google.com/document/d/1gQeg-at7jM69PBJz9OZSUhfYTOzc6jTW5IDaH_PtuKg/edit?usp=sharing
+https://docs.google.com/document/d/1syCtG3ThItfpYG8DGrM53BR0919dyozAFXBvrtixH2k/edit?usp=sharing 
 
 Key Relationships:
 
