@@ -207,35 +207,35 @@ class Order extends Model {
 
 ### Step-by-Step Installation
 
-1. Clone the Repository
-
+**1. Clone the Repository**
+    
     bash
     git clone https://github.com/[your-username]/QuickPlate.git/n
     cd QuickPlate
 
-2. Install Dependencies
+**2. Install Dependencies**
 
-bash
-composer install
-npm install
+    bash
+    composer install
+    npm install
 
-3. Environment Configuration
+**3. Environment Configuration**
 
-bash
-cp .env.example .env
-php artisan key:generate
+    bash
+    cp .env.example .env
+    php artisan key:generate
 
-4. Database Setup
+**4. Database Setup**
+    
+    bash
+    php artisan migrate
+    php artisan db:seed
 
-bash
-php artisan migrate
-php artisan db:seed
-
-5. Start Development Server
-
-bash
-php artisan serve
-npm run dev
+**5. Start Development Server**
+   
+    bash
+    php artisan serve
+    npm run dev
 
 ## Testing and Quality Assurance
 
