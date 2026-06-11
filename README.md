@@ -317,6 +317,8 @@ npm run dev
 
 
 ## Conclusion
+Taste-of-IIUM successfully 
+
 QuickPlate successfully demonstrates the implementation of a comprehensive food ordering system using Laravel framework. The project showcases proficiency in web development fundamentals including MVC architecture, database design, user authentication, and responsive web design.
 
 ### Key Achievements
