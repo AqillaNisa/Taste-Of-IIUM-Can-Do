@@ -94,99 +94,170 @@ Key Relationships:
   
 php
 `// Authentication Routes`
-Auth::routes();
+Route::redirect('/login', '/admin/login');
 
-`// Public Routes`
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
-Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
-
-`// Customer Protected Routes`
-Route::middleware(['auth', 'customer'])->group(function () {
-    Route::get('/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard');
-    Route::resource('orders', OrderController::class);
-    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::prefix('admin')->group(function () {
+    // Guest only routes (Login page & authentication processing)
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [AuthController::class, 'create'])->name('login');
+        Route::post('/login', [AuthController::class, 'store'])->name('admin.login.store');
+    });
+    
+`// Authenticated admin routes (Logout processing)`
+Route::middleware(['auth', 'admin'])->group(function () {
+Route::post('/logout', [AuthController::class, 'destroy'])->name('admin.logout');
+    });
 });
 
-`// Restaurant Owner Protected Routes`
-Route::middleware(['auth', 'restaurant'])->group(function () {
-    Route::get('/restaurant/dashboard', [RestaurantOwnerController::class, 'dashboard'])->name('restaurant.dashboard');
-    Route::resource('menu-items', MenuItemController::class);
+`// Public Routes`
+Route::get('/mahallah/{mahallah}', [StallPageController::class, 'show']);
+Route::get('/stall', function (){return view('stall');});
+Route::get('/stall/{mahallah}',function($mahallah){return view('stall', compact('mahallah'));})->name('stall');
+
+
+`// stall Protected Routes`
+oute::prefix('admin')->group(function () {
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::resource('users', UserController::class)->except(['show'])->names('admin.users');
+        Route::resource('stalls', StallController::class)->except(['show'])->names('admin.stalls');
+        Route::resource('foods', FoodController::class)->except(['show'])->names('admin.foods');
+    });
 });
 
 - Controllers
   
   *Main Controllers Implemented are below :*
 
-  1. HomeController: Handles homepage display and restaurant listings
-  2. RestaurantController: Manages restaurant information and menu display
-  3. OrderController: Processes order creation, tracking, and management
-  4. MenuItemController: Handles CRUD operations for menu items
-  5. CartController: Manages shopping cart functionality
-  6. CustomerController: Customer dashboard and profile management
-  7. RestaurantOwnerController: Restaurant owner dashboard and analytics
+1. AuthController: Handles user login display, admin authentication processing, and logout functionality.
+2. DashboardController: Manages the admin dashboard view and main backend analytics.
+3. UserController: Handles CRUD operations and management for system users.
+4. StallController: Manages backend administration, creation, and updating of stalls.
+5. FoodController: Handles backend CRUD operations for food items and menus.
+6. StallPageController: Manages public-facing views for specific stalls and Mahallah listings.
 
 - Models and Relationships
   
 php// User Model
-class User extends Authenticatable {
-    public function orders() {
-        return $this->hasMany(Order::class);
-    }
-    
-    public function restaurant() {
-        return $this->hasOne(Restaurant::class);
+class User extends Authenticatable
+{
+    /** @use HasFactory<UserFactory> */
+    use HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'is_admin',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'is_admin' => 'boolean',
+            'password' => 'hashed',
+        ];
     }
 }
 
-// Restaurant Model  
-class Restaurant extends Model {
-    public function user() {
-        return $this->belongsTo(User::class);
-    }
-    
-    public function menuItems() {
-        return $this->hasMany(MenuItem::class);
+// Stall Model  
+class Stall extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'mahallah',
+        'opening_hours',
+        'food_type',
+        'menu_items',
+        'image_path',
+    ];
+
+    public function foods(): HasMany
+    {
+        return $this->hasMany(Food::class);
     }
 }
 
-// Order Model
-class Order extends Model {
-    public function user() {
-        return $this->belongsTo(User::class);
+// Food Model
+class Food extends Model
+{
+    use HasFactory;
+
+    protected $table = 'foods';
+
+    protected $fillable = [
+        'stall_id',
+        'name',
+        'category',
+        'price',
+        'description',
+        'image_path',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'price' => 'decimal:2',
+        ];
     }
-    
-    public function orderItems() {
-        return $this->hasMany(OrderItem::class);
+
+    public function stall(): BelongsTo
+    {
+        return $this->belongsTo(Stall::class);
     }
 }
 
 - Views and User Interface
 
   *Blade Templates Structure:*
-  - layouts/app.blade.php - Main application layout
-  - home.blade.php - Homepage with restaurant listings
-  - restaurants/index.blade.php - Restaurant browsing page
-  - restaurants/show.blade.php - Individual restaurant menu
-  - orders/create.blade.php - Order placement form
-  - dashboard/customer.blade.php - Customer dashboard
-  - dashboard/restaurant.blade.php - Restaurant owner dashboard
-
+  -layouts/app.blade.php: The main layout used for all public-facing pages.
+  -admin/layouts/app.blade.php: The master layout specifically for the admin dashboard pages.
+  -welcome.blade.php: The initial landing page of the website.
+  -home.blade.php: The main homepage for logged-in or browsing users.
+  -login.blade.php: The page containing the login form for users and admins.
+  -stall.blade.php: The public page that displays information and menus for a specific stall.
+  -mahallah/male.blade.php: A list of food stalls located in the male Mahallah.
+  -mahallah/female.blade.php: A list of food stalls located in the female Mahallah.
+  -admin/dashboard.blade.php: The central overview page for system administrators.
+  
    *Design Features:*
-   - Responsive Design: Bootstrap 5 for mobile-first approach
-   - Color Scheme: Modern orange and white theme representing food industry
-   - Navigation: Intuitive menu structure with user role-based options
-   - Interactive Elements: Dynamic cart updates, real-time order tracking
+   - Responsive Design: Implements Bootstrap 5 for a mobile-first approach, allowing students and staff to seamlessly browse food options.
+   - Color Scheme: Modern orange and white and blue theme representing food industry.
+   - Navigation: Features an intuitive Mahallah-based and gender-segregated layout (Male vs. Female      Mahallah selections) along with distinct navigation views depending on whether the user is a        public visitor or a system administrator.
+   - Interactive Elements: Features dynamic data tables, modular UI forms, and shared validation         error feedback to make stall registration and menu management quick and seamless for administrators.
 
 
 ## User Authentication System
 
 ### **Authentication Features**
-- **Registration System**: Email validation, password confirmation, role selection
+- **Registration System**: Email validation, password confirmation
 - **Login System**: Secure authentication with "Remember Me" option
 - **Password Reset**: Email-based password recovery system
-- **Role-Based Access**: Different dashboards for customers and restaurant owners as admin
-- **Profile Management**: Users can update their information and preferences
+- **Role-Based Access**: Different dashboards for visitors and admin
+- **Profile Management**: Users can update information regarding stall and food items
 
 ### **Security Measures**
 - Password encryption using Laravel's built-in hashing
