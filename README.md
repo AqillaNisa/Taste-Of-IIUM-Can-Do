@@ -90,39 +90,37 @@ Key Relationships:
 **Laravel Components Implementation**
 
 - Routes (Web.php)
-  
-php
-`// Authentication Routes`
-Route::redirect('/login', '/admin/login');
+      php
+      `// Authentication Routes`
+      Route::redirect('/login', '/admin/login');
 
-Route::prefix('admin')->group(function () {
-    // Guest only routes (Login page & authentication processing)
-    Route::middleware('guest')->group(function () {
-        Route::get('/login', [AuthController::class, 'create'])->name('login');
-        Route::post('/login', [AuthController::class, 'store'])->name('admin.login.store');
-    });
-    
-`// Authenticated admin routes (Logout processing)`
-Route::middleware(['auth', 'admin'])->group(function () {
-Route::post('/logout', [AuthController::class, 'destroy'])->name('admin.logout');
-    });
-});
+      Route::prefix('admin')->group(function () {
+      // Guest only routes (Login page & authentication processing)
+      Route::middleware('guest')->group(function () {
+      Route::get('/login', [AuthController::class, 'create'])->name('login');
+      Route::post('/login', [AuthController::class, 'store'])->name('admin.login.store');
+      });
 
-`// Public Routes`
-Route::get('/mahallah/{mahallah}', [StallPageController::class, 'show']);
-Route::get('/stall', function (){return view('stall');});
-Route::get('/stall/{mahallah}',function($mahallah){return view('stall', compact('mahallah'));})->name('stall');
+      `// Authenticated admin routes (Logout processing)`
+      Route::middleware(['auth', 'admin'])->group(function () {
+      Route::post('/logout', [AuthController::class, 'destroy'])->name('admin.logout');
+      });
+      });
 
+      `// Public Routes`
+      Route::get('/mahallah/{mahallah}', [StallPageController::class, 'show']);
+      Route::get('/stall', function (){return view('stall');});
+      Route::get('/stall/{mahallah}',function($mahallah){return view('stall', compact('mahallah'));})->name('stall');
 
-`// stall Protected Routes`
-oute::prefix('admin')->group(function () {
-    Route::middleware(['auth', 'admin'])->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
-        Route::resource('users', UserController::class)->except(['show'])->names('admin.users');
-        Route::resource('stalls', StallController::class)->except(['show'])->names('admin.stalls');
-        Route::resource('foods', FoodController::class)->except(['show'])->names('admin.foods');
-    });
-});
+      `// stall Protected Routes`
+      Route::prefix('admin')->group(function () {
+      Route::middleware(['auth', 'admin'])->group(function () {
+          Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+          Route::resource('users', UserController::class)->except(['show'])->names('admin.users');
+          Route::resource('stalls', StallController::class)->except(['show'])->names('admin.stalls');
+          Route::resource('foods', FoodController::class)->except(['show'])->names('admin.foods')
+          });
+      });
 
 - Controllers
   
@@ -137,9 +135,8 @@ oute::prefix('admin')->group(function () {
 
 - Models and Relationships
   
-php// User Model
-class User extends Authenticatable
-{
+    php// User Model
+    class User extends Authenticatable {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
@@ -178,11 +175,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-}
+    }
 
 // Stall Model  
-class Stall extends Model
-{
+
+    class Stall extends Model
+    {
     use HasFactory;
 
     protected $fillable = [
@@ -198,11 +196,12 @@ class Stall extends Model
     {
         return $this->hasMany(Food::class);
     }
-}
+    }
 
 // Food Model
-class Food extends Model
-{
+
+    class Food extends Model
+    {
     use HasFactory;
 
     protected $table = 'foods';
@@ -227,7 +226,7 @@ class Food extends Model
     {
         return $this->belongsTo(Stall::class);
     }
-}
+    }
 
 - Views and User Interface
 
