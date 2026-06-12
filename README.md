@@ -15,26 +15,26 @@
 - MA RUI - 2418802
 
 
-## Project Overview (THILAH)
+## Project Overview
 
 Introduction :
 Taste-of-IIUM is a web-based application development to help users easily find food and beverages that are available in different Mahallah cafes in IIUM campus. It also included an integrated map feature that showed the exact location of each Mahallah cafe to help users easily reach the cafe without confusion, especially for new students or visitors.
 
-## Project Objectives (HANNA)
+## Project Objectives
 
-- Primary Goal: Create a functional food ordering platform that connects customers and restaurants
+- Primary Goal: Create a functional food menu platform that connects admin page to user page
 - Technical Goal: Implement Laravel MVC architecture with full CRUD operations
 - User Experience Goal: Provide an intuitive, responsive interface for both customers and restaurant owners
-- Business Goal: Enable efficient order management and tracking system
+- Business Goal: Enable restaurants manage the display of menu lists in each Mahallah cafe and users can see them easily
 
-## Target Users (MARUI)
+## Target Users
 
-- Customers: Individuals looking to order food online
+- Users: Individuals looking to food menu list online in Mahallah Cafe IIUM
 - Restaurant Owners: Business owners who want to manage their restaurant digitally
 - Administrators: System managers who oversee the platform
 
 
-## Features and Functionalities (SITI)
+## Features and Functionalities
 
 **Customer Features**
 
@@ -77,15 +77,14 @@ Core Tables:
 - foods - Store information for each menu, category, price, and specific stall via stall_id. 
 - migrations - Record information related to the database and record changes or table creation
 
-### Entity Relationship Diagram (ERD) (HANNA)
+### Entity Relationship Diagram (ERD) 
 
 https://docs.google.com/document/d/1syCtG3ThItfpYG8DGrM53BR0919dyozAFXBvrtixH2k/edit?usp=sharing 
 
 Key Relationships:
 
-- Users can have multiple Orders (One-to-Many)
 - Restaurants can have multiple Menu Items (One-to-Many)
-- Orders can have multiple Order Items (One-to-Many)
+- User can have multiple Stalls (One-to-Many)
 - Menu Items belong to Categories (Many-to-One)
 
 ** Laravel Components Implementation**
@@ -127,7 +126,7 @@ oute::prefix('admin')->group(function () {
 
 - Controllers
   
-  *Main Controllers Implemented are below :*
+  **Main Controllers Implemented are below :**
 
 1. AuthController: Handles user login display, admin authentication processing, and logout functionality.
 2. DashboardController: Manages the admin dashboard view and main backend analytics.
@@ -391,7 +390,7 @@ Taste-of-IIUM demonstrates the development of a web-based application using the 
 ### Key Achievements
 
 - Successfully implemented all required Laravel components (Routes, Controllers, Views, Models)
-- Created a functional food ordering system with user role management
+- Created a functional food menu system with user role management
 - Developed a responsive, user-friendly interface
 - Demonstrated understanding of database relationships and CRUD operations
 - Applied security best practices for user authentication
@@ -400,6 +399,6 @@ Taste-of-IIUM demonstrates the development of a web-based application using the 
 This project provides practical experience in building real-world web applications and demonstrates the ability to work collaboratively in a team environment. The skills gained through this project are directly applicable to professional web development scenarios.
 
 - Project Completion Date: 11/6/2025
-- Course: INFO 3305 Web Application Development
+- Course: BIIT 2305 Web Application Development
 
 
