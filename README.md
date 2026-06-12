@@ -87,7 +87,7 @@ Key Relationships:
 - User can have multiple Stalls (One-to-Many)
 - Menu Items belong to Categories (Many-to-One)
 
-** Laravel Components Implementation**
+**Laravel Components Implementation**
 
 - Routes (Web.php)
   
