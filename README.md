@@ -29,9 +29,10 @@ Taste-of-IIUM is a web-based application development to help users easily find f
 
 ## Target Users
 
-- Users: Individuals looking to food menu list online in Mahallah Cafe IIUM
-- Restaurant Owners: Business owners who want to manage their restaurant digitally
-- Administrators: System managers who oversee the platform
+- Students: As the primary users, students can explore food options across different mahallah cafes. This broadens their daily dining choices and improves their overall campus experience at IIUM.
+- IIUM Faculty and Staff: Faculty and staff can use the platform to easily browse food options across various mahallahs, saving them the hassle of physically visiting multiple cafes to see what is available.
+- Visitors and New Students: For those unfamiliar with the campus, this system makes it much easier to locate cafes and discover the specific dining options available in each mahallah.
+- Cafe Operators and Administrators: Operators and admins can use the backend system to manage food details, update menus, upload photos, and adjust operating hours. They can also leverage the platform for promotions to help drive sales.
 
 
 ## Features and Functionalities
@@ -342,38 +343,43 @@ Key Relationships:
 
 ## Future Enhancements
 ### Phase 2 Features (Potential Improvements)
-- **Real-time Notifications**: Push notifications for order updates
-- **Payment Integration**: Stripe or PayPal payment processing
-- **GPS Tracking** : Real-time delivery tracking with maps
-- **Rating System** : Customer reviews and restaurant ratings
-- **Advanced Analytics** : Detailed sales reports and customer insights
-- **Mobile App** : Native mobile application for iOS and Android
+- **Introduce online ordering and a pre-booking system.
+- **Add user reviews and a rating system.
+- **Display real-time operating status (Open/Closed).
+- **Include a "favorites" list and personalized food recommendations.
+- **Support multiple languages (e.g., Malay, English, Mandarin, and Arabic).
 
 ### Scalability Considerations
 
-- Database optimization for larger datasets
-- Caching implementation for improved performance
-- API development for mobile app integration
-- Load balancing for high traffic scenarios
-
+- Optimize the database to improve system performance and loading speeds.
+- Implement regular data backup and recovery mechanisms.
+- Strengthen security protocols to protect both user and admin data.
+- Improve system scalability to accommodate a growing user base and future feature rollouts.
+- Conduct ongoing bug fixes and system maintenance to ensure long-term reliability.
 
 ## Learning Outcomes
 ### Technical Skills Gained
 
-- Laravel Framework: Understanding of MVC architecture and Eloquent ORM
-- Database Design: Creating efficient database schemas and relationships
-- Authentication: Implementing secure user authentication systems
-- Frontend Development: Building responsive interfaces with Bootstrap
-- Version Control: Using Git and GitHub for project management
+- Learned how to build web applications using the Laravel framework.
+
+- Deepened our practical understanding of the MVC architecture, specifically routing, controllers, models, and views.
+
+- Improved database design skills through ERD planning and hands-on database management.
+
+- Applied front-end development techniques using HTML, CSS, and Laravel's Blade templating engine.
+
+- Successfully implemented user authentication and CRUD (Create, Read, Update, Delete) functionalities.
+
+- Sharpened our debugging, testing, and overall technical problem-solving abilities throughout the development cycle.
+- Understood how to use Git and GitHub for project management
 
 ### Soft Skills Developed
 
-- **Team Collaboration** : Working effectively in a group environment
-- **Project Management** : Planning and executing a complex web application
-- **Problem Solving** : Debugging and resolving technical challenges
-- **Documentation** : Creating comprehensive project documentation
-
-
+- **Enhanced teamwork and cross-collaboration among team members.
+- **Improved communication and presentation skills through regular discussions and project demonstrations.
+- **Practiced effective time management to ensure project milestones and deadlines were met.
+- **Exercised critical thinking and decision-making during the planning and execution phases.
+- **Gained experience in task delegation, project management, and taking ownership of specific project components.
 ## References
 
 1. Laravel Documentation. (2024). Laravel 10.x Documentation. Retrieved from https://laravel.com/docs/10.x
